@@ -1,0 +1,14 @@
+{
+  "prompt": "You are monitoring the University of Health Sciences (UHS) official website https://www.uhs.edu.pk/ for new public notices. When a change is detected compared to the last check, fetch the current page and identify NEW public notices (e.g., selection lists, admission notices, MDCAT notices, scholarships, tenders, results, examinations, academic calendar, etc.). Briefly summarize each new notice in plain language (title + one-line description). If nothing new, reply only 'No new notices on UHS website since last check.'",
+  "schedule": "every 6h",
+  "deliver": "origin",
+  "origin": {
+    "type": "chat",
+    "id": "76167403065478@lid"
+  },
+  "no_agent": true,
+  "monitor_url": "https://www.uhs.edu.pk/",
+  "name": "UHS Exam Notices Monitor",
+  "timezone": "Asia/Kolkata",
+  "repeat": 200
+}

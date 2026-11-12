@@ -1,0 +1,51 @@
+{
+  "status": "ready",
+  "categories": [
+    {
+      "category": "productivity",
+      "skills": [
+        {"name": "document-to-action-items", "description": "Extract cited obligations, deadlines, tasks from documents."},
+        {"name": "google-workspace", "description": "Gmail, Calendar, Drive, Docs, Sheets via gws CLI or Python."},
+        {"name": "maps", "description": "Geocode, POIs, routes, timezones via OpenStreetMap/OSRM."},
+        {"name": "meeting-action-items", "description": "Turn meeting notes into cited decisions, owners, tickets."},
+        {"name": "microsoft-office", "description": "Create, read, and edit Word, PowerPoint, and Excel files."},
+        {"name": "pdf", "description": "PDF files: create, read, merge, fill, OCR, edit text."},
+        {"name": "product-price-monitor", "description": "Watch product, flight, or listing prices; alert on target."},
+        {"name": "teams-meeting-pipeline", "description": "Teams meeting summaries, job replay, Graph subscriptions."},
+        {"name": "weekly-review-planning", "description": "Weekly reset: commitments, stalled work, next-week plan."}
+      ]
+    },
+    {
+      "category": "note-taking",
+      "skills": [
+        {"name": "obsidian", "description": "Read, search, create, and edit notes in the Obsidian vault."}
+      ]
+    },
+    {
+      "category": "media-creative",
+      "skills": [
+        {"name": "architecture-diagram", "description": "Dark-themed SVG architecture/cloud/infra diagrams as HTML."},
+        {"name": "ascii-video", "description": "ASCII video: convert video/audio to colored ASCII MP4/GIF."},
+        {"name": "baoyu-infographic", "description": "Infographics: 21 layouts x 21 styles (信息图, 可视化)."},
+        {"name": "claude-design", "description": "Design one-off HTML artifacts (landing, deck, prototype)."},
+        {"name": "humanizer", "description": "Humanize text: strip AI-isms and add real voice."},
+        {"name": "manim-video", "description": "Manim CE animations: 3Blue1Brown math/algo videos."},
+        {"name": "p5js", "description": "p5.js sketches: gen art, shaders, interactive, 3D."},
+        {"name": "popular-web-designs", "description": "54 real design systems (Stripe, Linear, Vercel) as HTML/CSS."},
+        {"name": "songwriting-and-ai-music", "description": "Songwriting craft and Suno AI music prompts."}
+      ]
+    }
+  ],
+  "total_skills": 19,
+  "summary": {
+    "productivity": 9,
+    "note-taking": 1,
+    "media-creative": 9,
+    "already_set_up": ["website-notice-monitor", "hermes-agent"]
+  },
+  "next_questions": [
+    "What is your top priority? (e.g., MBBS prep, UniTix website, portfolio, study tracking)",
+    "Which specific skills should I configure first? (I can set up all 19, but tell me your top 3-5)",
+    "How do you want to use these skills? (e.g., schedule tracking, website building, note organization, content creation)"
+  ]
+}

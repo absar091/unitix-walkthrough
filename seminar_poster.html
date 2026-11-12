@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Seminar on The Future of Veterinary Medicine</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+PK:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
+  :root {
+    --primary: #1a3a5c;
+    --secondary: #2d6a4f;
+    --accent: #d4a017;
+    --light: #f8f9fa;
+    --dark: #121212;
+    --white: #ffffff;
+    --text: #333333;
+    --text-muted: #666666;
+    --border: #e0e0e0;
+    --shadow: 0 4px 24px rgba(0,0,0,0.12);
+    --radius: 8px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', 'Noto Sans PK', sans-serif;
+    background: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+  }
+
+  .poster {
+    width: 1200px;
+    max-width: 100%;
+    height: 1600px;
+    max-height: 90vh;
+    background: var(--white);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Header Section */
+  .header {
+    background: linear-gradient(135deg, #1a3a5c 0%, #2d6a4f 100%);
+    padding: 40px 50px;
+    color: white;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .header::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 60%;
+    height: 60%;
+    background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 70%);
+  }
+
+  .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  .logo {
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  .logo .accent { color: #ffd700; }
+
+  .header-badge {
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(10px);
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    border: 1px solid rgba(255,255,255,0.3);
+  }
+
+  /* Main Title */
+  .main-title {
+    text-align: center;
+    padding: 40px 50px 30px;
+    background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%);
+  }
+
+  .event-icon {
+    font-size: 56px;
+    margin-bottom: 20px;
+  }
+
+  .main-title h1 {
+    font-family: 'Noto Sans PK', sans-serif;
+    font-size: 32px;
+    font-weight: 800;
+    color: #1a3a5c;
+    line-height: 1.2;
+    margin-bottom: 15px;
+    letter-spacing: -0.5px;
+  }
+
+  .main-title .subtitle {
+    font-size: 18px;
+    color: #666;
+    font-weight: 400;
+    line-height: 1.4;
+  }
+
+  /* Infographic Row */
+  .infographic-row {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 30px 50px;
+    background: #f8f9fa;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .infographic {
+    text-align: center;
+    flex: 1;
+    max-width: 200px;
+  }
+
+  .infographic .icon {
+    font-size: 32px;
+    margin-bottom: 8px;
+  }
+
+  .infographic .label {
+    font-size: 11px;
+    color: #999;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+  }
+
+  .infographic .value {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1a3a5c;
+  }
+
+  /* Date & Time Details */
+  .details {
+    padding: 30px 50px;
+    background: white;
+  }
+
+  .details-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+
+  .detail-card {
+    background: #f8f9fa;
+    border-radius: var(--radius);
+    padding: 20px 24px;
+    border: 1px solid var(--border);
+  }
+
+  .detail-card .label {
+    font-size: 12px;
+    color: #999;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+  }
+
+  .detail-card .value {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1a3a5c;
+  }
+
+  /* Speakers Section */
+  .speakers {
+    padding: 30px 50px 20px;
+    background: #f8f9fa;
+  }
+
+  .section-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #1a3a5c;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .section-title::before {
+    content: '';
+    width: 40px;
+    height: 3px;
+    background: #d4a017;
+    border-radius: 2px;
+  }
+
+  .speakers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 16px;
+  }
+
+  .speaker-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .speaker-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  }
+
+  .speaker-avatar {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #1a3a5c, #2d6a4f);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0 auto 12px;
+  }
+
+  .speaker-card .name {
+    font-size: 16px;
+    font-weight: 700;
+    color: #1a3a5c;
+  }
+
+  .speaker-card .role {
+    font-size: 13px;
+    color: #666;
+    margin-top: 4px;
+  }
+
+  /* Registration CTA */
+  .cta {
+    padding: 30px 50px;
+    background: linear-gradient(135deg, #2d6a4f 0%, #1a3a5c 100%);
+    color: white;
+    text-align: center;
+  }
+
+  .cta .icon {
+    font-size: 48px;
+    margin-bottom: 15px;
+  }
+
+  .cta h2 {
+    font-size: 24px;
+    font-weight: 800;
+    margin-bottom: 10px;
+  }
+
+  .cta p {
+    font-size: 16px;
+    opacity: 0.9;
+    margin-bottom: 20px;
+  }
+
+  .cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 14px 32px;
+    border-radius: 6px;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 16px;
+    transition: all 0.2s;
+  }
+
+  .btn-primary {
+    background: white;
+    color: #1a3a5c;
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  }
+
+  .btn-outline {
+    background: transparent;
+    color: white;
+    border: 2px solid rgba(255,255,255,0.5);
+  }
+
+  .btn-outline:hover {
+    background: rgba(255,255,255,0.15);
+    border-color: white;
+  }
+
+  /* Footer */
+  .footer {
+    background: #121212;
+    color: white;
+    padding: 30px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer .left {
+    font-size: 14px;
+    opacity: 0.8;
+  }
+
+  .footer .right {
+    font-size: 14px;
+    opacity: 0.8;
+  }
+
+  /* Mobile Responsive */
+  @media (max-width: 768px) {
+    .poster {
+      height: auto;
+      min-height: 100vh;
+    }
+
+    .header {
+      padding: 25px 20px;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .header-content {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .header-badge {
+      align-self: flex-end;
+    }
+
+    .main-title h1 {
+      font-size: 24px;
+    }
+
+    .infographic-row {
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      padding: 20px 20px;
+    }
+
+    .infographic {
+      max-width: 100%;
+    }
+
+    .details {
+      padding: 20px;
+    }
+
+    .details-grid {
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+
+    .speakers {
+      padding: 20px;
+    }
+
+    .speakers-grid {
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+
+    .cta {
+      padding: 25px 20px;
+    }
+
+    .cta-buttons {
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .btn {
+      width: 100%;
+      text-align: center;
+    }
+
+    .footer {
+      flex-direction: column;
+      gap: 10px;
+      text-align: center;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .header {
+      padding: 15px 15px;
+    }
+
+    .header .logo {
+      font-size: 20px;
+    }
+
+    .main-title h1 {
+      font-size: 20px;
+    }
+
+    .main-title .subtitle {
+      font-size: 14px;
+    }
+
+    .infographic .value {
+      font-size: 14px;
+    }
+
+    .detail-card .value {
+      font-size: 16px;
+    }
+
+    .speaker-card .name {
+      font-size: 14px;
+    }
+  }
+</style>
+</head>
+<body>
+  <div class="poster">
+    <!-- Header -->
+    <header class="header">
+      <div class="header-content">
+        <div>
+          <div class="logo"><span class="accent">CUVAS</span> | <span class="accent">Cholistan</span> University</div>
+        </div>
+        <div class="header-badge">DVM THIRD SEMESTER</div>
+      </div>
+    </header>
+
+    <!-- Main Title -->
+    <div class="main-title">
+      <div class="event-icon">🔬</div>
+      <h1>Seminar on<br>The Future of<br>Veterinary Medicine</h1>
+      <p class="subtitle">Exploring innovation, animal care, and new frontiers</p>
+    </div>
+
+    <!-- Infographic Row -->
+    <div class="infographic-row">
+      <div class="infographic">
+        <div class="icon">📅</div>
+        <div class="label">Date</div>
+        <div class="value">Nov 26, 2026</div>
+      </div>
+      <div class="infographic">
+        <div class="icon">⏰</div>
+        <div class="label">Time</div>
+        <div class="value">11 AM – 1 PM</div>
+      </div>
+      <div class="infographic">
+        <div class="icon">📍</div>
+        <div class="label">Venue</div>
+        <div class="value">CUVAS Main Auditorium</div>
+      </div>
+      <div class="infographic">
+        <div class="icon">👥</div>
+        <div class="label">Entry</div>
+        <div class="value">FREE for all</div>
+      </div>
+    </div>
+
+    <!-- Details -->
+    <div class="details">
+      <div class="details-grid">
+        <div class="detail-card">
+          <div class="label">Chief Guest</div>
+          <div class="value">Prof. Dr. Tariq Javed</div>
+          <div style="font-size:13px; color:#666; margin-top:4px;">Vice Chancellor, CUVAS</div>
+        </div>
+        <div class="detail-card">
+          <div class="label">Speakers</div>
+          <div class="value">Dr. Kamran Ahmed</div>
+          <div style="font-size:13px; color:#666; margin-top:4px;">Dr. Ukasha Bin Shafqat</div>
+          <div style="font-size:13px; color:#666; margin-top:2px;">Ch. Mohsin Raza</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Speakers -->
+    <div class="speakers">
+      <div class="section-title">Featured Speakers</div>
+      <div class="speakers-grid">
+        <div class="speaker-card">
+          <div class="speaker-avatar">👤</div>
+          <div class="name">Prof. Dr. Tariq Javed</div>
+          <div class="role">Chief Guest &amp; Vice Chancellor</div>
+        </div>
+        <div class="speaker-card">
+          <div class="speaker-avatar">👤</div>
+          <div class="name">Dr. Kamran Ahmed</div>
+          <div class="role">Speaker</div>
+        </div>
+        <div class="speaker-card">
+          <div class="speaker-avatar">👤</div>
+          <div class="name">Dr. Ukasha Bin Shafqat</div>
+          <div class="role">Speaker</div>
+        </div>
+        <div class="speaker-card">
+          <div class="speaker-avatar">👤</div>
+          <div class="name">Ch. Mohsin Raza</div>
+          <div class="role">Speaker</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Registration CTA -->
+    <div class="cta">
+      <div class="icon">📝</div>
+      <h2>Register Now</h2>
+      <p>Free entry for all students &amp; faculty</p>
+      <div class="cta-buttons">
+        <a href="#" class="btn btn-primary">📱 Scan QR Code</a>
+        <a href="#" class="btn btn-outline">Register Online</a>
+      </div>
+      <p style="margin-top:15px; font-size:14px; opacity:0.8;">
+        Register via QR code or visit our website. Contact us for any queries.
+      </p>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="left">
+        Organized by DVM Third Semester, CUVAS
+      </div>
+      <div class="right">
+        Contact: +92-XXX-XXX-XXXX &bull; 2026 All Rights Reserved
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
